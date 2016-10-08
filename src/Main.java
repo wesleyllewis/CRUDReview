@@ -41,13 +41,6 @@ public class Main {
                     int index = Integer.parseInt(request.queryParams("index"));
                     session.attribute("index", index);
                     HashMap m = new HashMap();
-                    for (Book b : books) {
-                        if (b.addedBy.equalsIgnoreCase(userName)) {
-                            b.editable = "editable";
-                        } else {
-                            b.editable = null;
-                        }
-                    }
                     m.put("book", books.get(index));
                     return new ModelAndView(m, "edit.html");
                 }),
